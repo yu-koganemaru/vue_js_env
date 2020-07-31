@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    container_name: vue
+    build: ./docker
+    ports:
+      - 30:8080
+    privileged: true
+    volumes:
+      - ./server:/app
+    tty: true
+    stdin_open: true
+    command: /bin/sh
